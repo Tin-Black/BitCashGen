@@ -11,8 +11,8 @@ print(" Official WebSite : https://Mmdrza.com")
 count = 0
 total = 0
 while True:
-    x = 1
-    y = 115792089237316195423570985008687907852837564279074904382605163141518161494336
+    x = 0x0000000000000000000000000000000000000000000000000000000000000001
+    y = 0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364140
     ran = random.randint(x, y)
     seed = str(ran)
     key = Key.from_int(ran)
@@ -38,5 +38,22 @@ while True:
     print("Private Key : "+privkey2)
     print(Fore.RED+"WiF : "+wif+Fore.CYAN+"  |BAL : "+Style.RESET_ALL+bal2)
     print(Fore.YELLOW+"Scan Number : "+Fore.WHITE+str(count)+Fore.MAGENTA+" Total Wallet : "+Fore.WHITE+str(total))
-    time.sleep(1)
-
+    time.sleep(1.24)
+    if int(bal) > 0:
+        print('Found Found Found Found Found Found Found Found Found Found Found Found ')
+        print('Ethereum ETH Address           :  ', caddr, '  : VALUE      = ', str(bal))
+        print('Found Found Found Found Found Found Found Found Found Found Found Found ')
+        f = open("winner.txt", "a")
+        f.write('\nPrivate key:' + key.to_hex())
+        f.write('\n Bch Address: ' + caddr + '  : TX      = ' + str(wif) + '\n')
+        f.close()
+        continue
+    if int(bal2) > 0:
+        print('Found Found Found Found Found Found Found Found Found Found Found Found ')
+        print('Ethereum ETH Address           :  ', uaddr, '  : VALUE      = ', str(bal))
+        print('Found Found Found Found Found Found Found Found Found Found Found Found ')
+        f = open("winner.txt", "a")
+        f.write('\nPrivate key:' + key1.to_hex())
+        f.write('\n Bch Address: ' + caddr + '  : TX      = ' + str(wif) + '\n')
+        f.close()
+        continue
